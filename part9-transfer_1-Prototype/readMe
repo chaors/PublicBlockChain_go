@@ -1,0 +1,11 @@
+/*
+转账
+1.UTXO结构
+2.改造UTXOs函数
+3.cli优化--文件分离
+4.FindSpendableUTXOs
+5.NewTransaction
+6.utxos函数方法 计算余额错误
+7.MineNewBlock处理多笔交易 多笔交易处理第二笔交易时，第一笔交易已经把数据库数据改变了
+所以获取utxo还需要txs参数
+**/

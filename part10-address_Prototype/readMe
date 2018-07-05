@@ -1,0 +1,12 @@
+/*
+转账
+1.sha256 base58
+2.公私钥
+3.address
+4.Wallets
+5.集成到之前的项目 cli createWallet send
+getAddressList(目前每次创建都是一个新的钱包集，需要将创建的钱包集持久化)
+6.TXInput  UnlockWithAddress完全可以传addresss啊？？？utxo方法
+8.Signature
+9.挖矿奖励
+**/

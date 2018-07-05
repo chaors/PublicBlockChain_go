@@ -1,0 +1,11 @@
+/*
+转账
+1.cli  addBlock -- > send
+2.json2Arr
+3.转账方法MineNewBlock
+4.改造AddBlock -->mine
+5.Transaction +newTRansaction 新普通交易
+6.unSpentTx
+7.cli getbalance
+8.utxo
+**/
