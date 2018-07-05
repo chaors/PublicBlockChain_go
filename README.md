@@ -1,4 +1,5 @@
-# PublicBlockChain_go 基于goLang的公链实现(具备公链全功能)
+# PublicBlockChain_go 
+# 基于goLang的公链实现(具备公链全功能)
 
 # 前言
 
@@ -6,21 +7,21 @@
 
 # 目录
 
-### 1.[区块链基础结构(part1)]()
+### 1.[区块链基础结构(part1)](https://www.jianshu.com/p/3e07eb857d36)
 
-### 2.[ProofOfWork(part2)]()
+### 2.[ProofOfWork(part2)](https://www.jianshu.com/p/50262fdbd346)
 
-### 3.[BoltDB(part3)]()
+### 3.[BoltDB(part3)](https://www.jianshu.com/p/d56843c3a5ba)
 
-### 4.[链上数据持久化(part4)]()
+### 4.[链上数据持久化(part4)](https://www.jianshu.com/p/4afa1ca3a066)
 
-### 5.[CLI命令行工具(part5/part6)]()
+### 5.[CLI命令行工具(part5/part6)](https://www.jianshu.com/p/5e6e4ba538c9)
 
-### 6.[交易TransAction(part7)]()
+### 6.[交易TransAction(part7)](https://www.jianshu.com/p/096672008f34)
 
-### 7.[转账1(part8)]()
+### 7.[转账1(part8)](https://www.jianshu.com/p/dd490d91546c)
 
-### 8.[转账1(part9)]()
+### 8.[转账2(part9)](https://www.jianshu.com/p/e00342717c87)
 
 ### 9.[钱包地址Address(part0)]()
 
