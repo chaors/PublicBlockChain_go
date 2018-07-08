@@ -60,7 +60,7 @@ $ go get github.com/boltdb/boltd / ...
  }
 ```
 
-#####更新表内容
+##### 更新表内容
 ```
 //3.更新表数据
  err = db.Update(func(tx *bolt.Tx) error {
