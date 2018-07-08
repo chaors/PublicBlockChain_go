@@ -6,11 +6,11 @@
 
 由于之前已经用[Python构建过简单的区块链结构](https://www.jianshu.com/p/ecfb2a9040a3)，所以对区块基本结构的东西不再做详细赘述。
 
-#废话少说上干货
+# 废话少说上干货
 
-##区块Block
+## 区块Block
 
-####Block
+#### Block
 ```
 type Block struct {
 	//1.区块高度
@@ -26,7 +26,7 @@ type Block struct {
 }
 ```
 
-####设置当前区块Hash
+#### 设置当前区块Hash
 ```
 func (block *Block) SetHash() {
 
@@ -60,7 +60,7 @@ func (block *Block) SetHash() {
 }
 ```
 
-####创建新区快
+#### 创建新区快
 ```
 func NewBlock(data string, height int64, prevBlockHash []byte) *Block {
 
@@ -79,7 +79,7 @@ func NewBlock(data string, height int64, prevBlockHash []byte) *Block {
 }
 ```
 
-####创世区块创建
+#### 创世区块创建
 ```
 func CreateGenesisBlock(data string) *Block {
 
@@ -87,9 +87,9 @@ func CreateGenesisBlock(data string) *Block {
 }
 ```
 
-###区块链BlockChain
+### 区块链BlockChain
 
-####区块链
+#### 区块链
 ```
 type Blockchain struct {
 	//有序区块的数组
@@ -97,7 +97,7 @@ type Blockchain struct {
 }
 ```
 
-####创建带有创世区块的区块链
+#### 创建带有创世区块的区块链
 ```
 func CreateBlockchainWithGensisBlock() *Blockchain  {
 
@@ -107,7 +107,7 @@ func CreateBlockchainWithGensisBlock() *Blockchain  {
 }
 ```
 
-####新增一个区块到区块链
+#### 新增一个区块到区块链
 ```
 func (blc *Blockchain) AddBlockToBlockchain(data string, height int64, prevHash []byte)  {
 
@@ -118,7 +118,7 @@ func (blc *Blockchain) AddBlockToBlockchain(data string, height int64, prevHash 
 }
 ```
 
-###utils辅助工具(int64转化为byte数组)
+### utils辅助工具(int64转化为byte数组)
 ```
 
 import (
@@ -141,7 +141,7 @@ func IntToHex(num int64) []byte  {
 }
 ```
 
-###测试Demo
+### 测试Demo
 ```
 /**
 @author: chaors
@@ -179,7 +179,7 @@ func main() {
 }
 ```
 
-###运行结果
+### 运行结果
 
 我们看到运行的结果，打印的内容为包含创世区块在内的四个区块的区块链。
 
