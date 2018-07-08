@@ -1,0 +1,12 @@
+/*
+转账
+1.reward
+2.UTXOSet  查询余额的时候遍历了整个数据库，怎么更简单 ResetUTXOSet创世区块时初始化
+    查询余额
+    转账改变的UTXO
+    FindUnPackageSpendableUTXOS Set本身就是UTXO集合，里面的不全是未花费吗？？？？
+
+3.修改多笔交易验签的bug，添加txs
+
+
+**/
