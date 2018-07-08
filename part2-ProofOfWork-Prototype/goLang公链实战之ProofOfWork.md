@@ -2,7 +2,7 @@
 
 今天来实现工作量证明。
 
-###区块新属性Nonce
+### 区块新属性Nonce
 我们先来看一下上节实现的区块结构：
 ```
 type Block struct {
@@ -25,7 +25,7 @@ type Block struct {
 
 引入Nonce后，就可以通过改变Nonce值来不断产生新的哈希值直到找到满足条件的哈希。
 
-###POW难度targetBits
+### POW难度targetBits
 
 前面用Python简单介绍过[区块链中的挖矿概念](https://www.jianshu.com/p/b39c361687c1),一般地，对于256位的哈希值来说设定挖矿条件的方式往往是：前多少位为0。targetBits便是用于指定目标哈希需满足的条件的，即计算的哈希值必须前targetBits位为0.
 
@@ -37,8 +37,8 @@ type Block struct {
 2.该值左移8-targetBits位，0000 0001 << 6 = 0100 0000 = target
 3.if hash < target 区块合法
 
-###Block结构完善
-#####Nonce
+### Block结构完善
+##### Nonce
 ```
 type Block struct {
 	//1.区块高度
@@ -55,7 +55,7 @@ type Block struct {
 	Nonce int64
 }
 ```
-#####新区块产生
+##### 新区块产生
 ```
 //1.创建新的区块
 func NewBlock(data string, height int64, prevBlockHash []byte) *Block {
@@ -81,8 +81,8 @@ func NewBlock(data string, height int64, prevBlockHash []byte) *Block {
 }
 ```
 
-###ProofOfWork
-#####基本结构
+### ProofOfWork
+##### 基本结构
 ```
 //期望计算的Hash值前面至少要有16个零
 const targetBits = 16
@@ -95,7 +95,7 @@ type ProofOfWork struct {
 }
 ```
 
-#####创建新的POW对象
+##### 创建新的POW对象
 ```
 //创建新的工作量证明对象
 func NewProofOfWork(block *Block) *ProofOfWork {
@@ -117,7 +117,7 @@ func NewProofOfWork(block *Block) *ProofOfWork {
 }
 ```
 
-#####哈希值的预选值
+##### 哈希值的预选值
 ```
 //拼接区块属性，返回字节数组
 func (pow *ProofOfWork) prepareData(nonce int) []byte {
@@ -138,7 +138,7 @@ func (pow *ProofOfWork) prepareData(nonce int) []byte {
 }
 ```
 
-#####区块有效性验证
+##### 区块有效性验证
 ```
 //判断当前区块是否有效
 func (proofOfWork *ProofOfWork) IsValid() bool  {
@@ -156,7 +156,7 @@ func (proofOfWork *ProofOfWork) IsValid() bool  {
 }
 ```
 
-#####挖矿(产生有效的哈希值)
+##### 挖矿(产生有效的哈希值)
 ```
 //运行工作量证明
 func (proofOfWork *ProofOfWork) Run() ([]byte, int64) {
@@ -194,7 +194,7 @@ func (proofOfWork *ProofOfWork) Run() ([]byte, int64) {
 }
 ```
 
-###POW测试
+### POW测试
 ```
 
 package main
