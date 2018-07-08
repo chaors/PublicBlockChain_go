@@ -2,7 +2,7 @@
 
 我们知道，bitcoin客户端的区块信息是存储在LevelDB数据库中。我们既然要基于go开发公链，这里用到的数据库是基于go的[boltDB](https://github.com/boltdb)。
 
-###安装
+### 安装
 
 使用go get
 ```
@@ -13,9 +13,9 @@ $ go get github.com/boltdb/boltd / ...
 
 ![boltdb安装目录](https://upload-images.jianshu.io/upload_images/830585-883a42d48e5e3518.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-###基本使用
+### 基本使用
 
-#####创建并打开数据库
+##### 创建并打开数据库
 注意：在这里gland直接运行，生成的my.db在main.go上层目录;命令行build在运行的话是当前目录！！！
 ```
 //1.数据库创建
@@ -29,7 +29,7 @@ $ go get github.com/boltdb/boltd / ...
 
 在你打开之后，你有两种处理它的方式：读-写和只读操作，读-写方式开始于db.Update方法，常用于建表和表中插入新数据；只读操作开始于db.View方法，常用于表数据的查询。
 
-#####创建新表
+##### 创建新表
 ```
 //2.创建表
 	err = db.Update(func(tx *bolt.Tx) error {
@@ -56,7 +56,7 @@ $ go get github.com/boltdb/boltd / ...
 	}
 ```
 
-#####更新表内容
+##### 更新表内容
 ```
 //3.更新表数据
 	err = db.Update(func(tx *bolt.Tx) error {
@@ -85,7 +85,7 @@ $ go get github.com/boltdb/boltd / ...
 	}
 ```
 
-#####表查询
+##### 表查询
 ```
 //4.查看表数据
 	err = db.View(func(tx *bolt.Tx) error {
