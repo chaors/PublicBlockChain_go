@@ -236,27 +236,27 @@ txInput4 = &TXInput{"22222",3,"ww"}
 }
 ```
 现在,我们来总结一下上述几个交易.
->A.chaors
->>1.从CoinbaseTransaction获得TXOutput0总额25
->>2.Transaction1转给ww10btc,TXOutput0被消耗,获得txOutput2找零15btc
->>3.Transaction2转给ww7Btc,txOutput2被消耗,获得txOutput4找零8btc
->>4.最后只剩8btc的txOutput4作为未花费输出
+> A.chaors
+>> 1.从CoinbaseTransaction获得TXOutput0总额25
+>> 2.Transaction1转给ww10btc,TXOutput0被消耗,获得txOutput2找零15btc
+>> 3.Transaction2转给ww7Btc,txOutput2被消耗,获得txOutput4找零8btc
+>> 4.最后只剩8btc的txOutput4作为未花费输出
 
->B.ww
->>1.从Transaction1获得TXOutput1,总额10btc
->>2.从Transaction2获得TXOutput3,总额7btc
->>3.Transaction3转给xyz15btc,TXOutput1和TXOutput3都被消耗,获得txOutput6找零2btc
->>4.最后只剩2btc的txOutput6作为未花费输出
+> B.ww
+>> 1.从Transaction1获得TXOutput1,总额10btc
+>> 2.从Transaction2获得TXOutput3,总额7btc
+>> 3.Transaction3转给xyz15btc,TXOutput1和TXOutput3都被消耗,获得txOutput6找零2btc
+>> 4.最后只剩2btc的txOutput6作为未花费输出
 
->C.xyz
->>1.从Transaction3获得TXOutput5,总额15btc
->>2.拥有15btc的TXOutput5作为未花费输出
+> C.xyz
+>> 1.从Transaction3获得TXOutput5,总额15btc
+>> 2.拥有15btc的TXOutput5作为未花费输出
 
 经过这个例子,我们可以发现转账具备几个特点:
-#####1.每笔转账必须有输入TXInput和输出TXOutput
-#####2.每笔输入必须有源可查(TXInput.TxHash)
-#####3.每笔输入的输出引用必须是未花费的(没有被之前的交易输入所引用)
-#####4.TXOutput是一个不可分割的整体,一旦被消耗就不可用.消费额度不对等时会有找零(产生新的TXOutput)
+##### 1.每笔转账必须有输入TXInput和输出TXOutput
+##### 2.每笔输入必须有源可查(TXInput.TxHash)
+##### 3.每笔输入的输出引用必须是未花费的(没有被之前的交易输入所引用)
+##### 4.TXOutput是一个不可分割的整体,一旦被消耗就不可用.消费额度不对等时会有找零(产生新的TXOutput)
 
 这个🌰很重要,对于后面转账的代码逻辑是个扎实的基础准备.
 
