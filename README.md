@@ -29,7 +29,9 @@
 
 ### 11.[MerkleTree(part12)](https://github.com/chaors/PublicBlockChain_go/blob/master/part12-MerkleTree_Prototype/goLang%E5%85%AC%E9%93%BE%E5%AE%9E%E6%88%98%E4%B9%8BMerkleTree.md)
 
-### 12.还在陆续更新中....
+### 12[网络初窥(多节点区块同步)(part13)](https://github.com/chaors/PublicBlockChain_go/blob/master/part13-Network_Prototype/goLang%E5%85%AC%E9%93%BE%E5%AE%9E%E6%88%98%E4%B9%8B%E7%BD%91%E7%BB%9C%E5%88%9D%E7%AA%A5.md)
+
+### 13.还在陆续更新中....
 
 ### ......
 
