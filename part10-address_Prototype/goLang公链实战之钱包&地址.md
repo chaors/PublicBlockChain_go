@@ -140,10 +140,11 @@ func newKeyPair() (ecdsa.PrivateKey, []byte) {
 ##### 5.对Version_PubKeyHash_CheckSum进行Base58编码即可得到地址Address
 
 通过上面五个步骤，我们知道Address讲过Base58解码后由三部分组成：
- | 交易版本 | 公钥哈希 | 校验和 |
+ 
+ |交易版本|公钥哈希|校验和|
  | - | :-: | - |
  | [Version](https://bitcoin.org/en/developer-reference#raw-transaction-format) | PubKeyHash | Checksum |
- | 0x00  | 62E907B15CBF27D5425399EBF6F0FB50EBB88F18 | C29B7D93 |
+ | 0x00 | 62E907B15CBF27D5425399EBF6F0FB50EBB88F18 | C29B7D93 |
 
 ```
 //用于生成地址的版本
