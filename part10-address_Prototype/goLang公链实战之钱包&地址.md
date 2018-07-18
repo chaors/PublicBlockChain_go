@@ -107,6 +107,7 @@ func NewWallet () *Wallet  {
 }
 ```
 通过私钥创建公钥
+
 ```
 
 //通过私钥创建公钥
@@ -142,7 +143,7 @@ func newKeyPair() (ecdsa.PrivateKey, []byte) {
 交易版本 | 公钥哈希 | 校验和 
 - | :-: | -
 [Version](https://bitcoin.org/en/developer-reference#raw-transaction-format)  | PubKeyHash | Checksum
-0x00  | 62E907B15CBF27D5425399EBF6F0FB50EBB88F18 | C29B7D93
+| 0x00  | 62E907B15CBF27D5425399EBF6F0FB50EBB88F18 | C29B7D93
 
 ```
 //用于生成地址的版本
@@ -345,6 +346,7 @@ if createWalletCmd.Parsed() {
 ```
 
 新增CLI_createWallet.go文件，真正地实现钱包创建功能：
+
 ```
 func (cli *CLI)createWallet()  {
 
@@ -457,6 +459,7 @@ type TXInput struct {
 ```
 
 由于引入了地址和公私钥的概念，这里就可以给交易输入引入签名和公钥属性。这里且不论什么是签名，公钥代表这笔输入属于哪一个钱包。
+
 ```
 
 type TXInput struct {
@@ -602,6 +605,7 @@ func (tx *Transaction) Sign(privateKey ecdsa.PrivateKey, prevTxs map[string]Tran
 }
 ```
 ###### 交易拷贝
+
 ```
 // 拷贝一份新的Transaction用于签名,包含所有的输入输出，但TXInput.Signature 和 TXIput.PubKey 被设置为 nil                                 T
 func (tx *Transaction) TrimmedCopy() Transaction {
@@ -809,6 +813,7 @@ func NewTransaction(from string, to string, amount int, blc *Blockchain, txs []*
 ```
 
 Blockchain.Mine
+
 ```
 //2.新增一个区块到区块链 --> 包含交易的挖矿
 func (blc *Blockchain) MineNewBlock(from []string, to []string, amount []string) {
@@ -835,6 +840,7 @@ func (blc *Blockchain) MineNewBlock(from []string, to []string, amount []string)
 至此，已经实现了地址的定义并集成到项目中。项目的功能虽然保持没变，但是集成了钱包地址后会更向一个区块链公链。
 
 ## Main_Tset
+
 ```
 package main
 
