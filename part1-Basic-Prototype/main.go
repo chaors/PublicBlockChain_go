@@ -23,13 +23,13 @@ func main() {
 	blockchain := BLC.CreateBlockchainWithGensisBlock()
 	//添加一个新区快
 	blockchain.AddBlockToBlockchain("first Block",
-		blockchain.Blocks[len(blockchain.Blocks)-1].Height,
+		blockchain.Blocks[len(blockchain.Blocks)-1].Height+1,
 		blockchain.Blocks[len(blockchain.Blocks)-1].Hash)
 	blockchain.AddBlockToBlockchain("second Block",
-		blockchain.Blocks[len(blockchain.Blocks)-1].Height,
+		blockchain.Blocks[len(blockchain.Blocks)-1].Height+1,
 		blockchain.Blocks[len(blockchain.Blocks)-1].Hash)
 	blockchain.AddBlockToBlockchain("third Block",
-		blockchain.Blocks[len(blockchain.Blocks)-1].Height,
+		blockchain.Blocks[len(blockchain.Blocks)-1].Height+1,
 		blockchain.Blocks[len(blockchain.Blocks)-1].Hash)
 	fmt.Println(blockchain)
 }
